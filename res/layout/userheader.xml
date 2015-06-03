@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dip"
+    android:orientation="vertical"
+    android:background="#f9f9f4">
+    
+    <Button
+        android:id="@+id/btuserback"
+        android:layout_height="30dip"
+        android:layout_width="40dip"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:text="@string/back"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_marginLeft="12dip"
+        android:background="@drawable/buttonstyle_normal"/>
+    <TextView 
+        android:id="@+id/settingtitle"
+        android:layout_height="32dip"
+        android:layout_width="wrap_content"
+        android:textSize="18sp"
+        android:gravity="center_vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/usercenter"/>
+</RelativeLayout>

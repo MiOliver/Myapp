@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF" >
+    
+         <include
+            android:id="@+id/include1"
+            layout="@layout/userheader" />
+
+    <LinearLayout
+        android:id="@+id/loginedit"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="40dip"
+            android:layout_marginLeft="60dip"
+            android:layout_marginRight="60dip"
+            android:layout_marginTop="70dip"
+            android:background="@drawable/bg_edittext"
+            android:gravity="center_vertical"
+            android:hint="@string/hintuser"
+            android:padding="5dip"
+            android:singleLine="true"
+            android:textColorHint="#AAAAAA"
+            android:textSize="15sp" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="40dip"
+            android:layout_marginLeft="60dip"
+            android:layout_marginRight="60dip"
+            android:layout_marginTop="20dip"
+            android:background="@drawable/bg_edittext"
+            android:gravity="center_vertical"
+            android:hint="@string/hintpass"
+            android:padding="5dip"
+            android:singleLine="true"
+            android:textColorHint="#AAAAAA"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btlogin"
+            android:layout_width="fill_parent"
+            android:layout_height="40dip"
+            android:layout_marginLeft="60dip"
+            android:layout_marginRight="60dip"
+            android:layout_marginTop="40dip"
+            android:background="@drawable/buttonstyle"
+            android:gravity="center"
+            android:text="@string/login"
+            android:textSize="15sp" />
+        
+        <TextView 
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_marginLeft="60dip"
+            android:layout_marginRight="60dip"
+            android:layout_marginTop="40dip"
+            android:textSize="12sp" 
+            />
+
+        <Button
+            android:id="@+id/btreg"
+            android:layout_width="fill_parent"
+            android:layout_height="40dip"
+            android:layout_marginLeft="60dip"
+            android:layout_marginRight="60dip"
+            android:layout_marginTop="40dip"
+            android:background="@drawable/buttonstyle"
+            android:gravity="center"
+            android:text="@string/register"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</RelativeLayout>

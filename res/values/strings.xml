@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Coco</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="heart">love</string>
+    <string name="money">money</string>
+    <string name="cloud">cloud</string>
+    <string name="line">line</string>
+    <string name="game">game</string>
+    <string name="message">message</string>
+    <string name="share">share</string>
+    <string name="gushi">gushi</string>
+    <string name="card">card</string>
+    
+    <string name="action_settings">settings</string>
+    <string name="about">about us</string>
+    <string name="friend">朋友圈</string>
+    <string name="read">阅读</string>
+    <string name="photo">照片</string>
+    <string name="lab">实验室</string>
+    <string name="info">信息</string>
+    
+    <string name="hintuser">请输入用户名...</string>
+    <string name="hintpass">请输入密码...</string>
+    <string name="usercenter">用户中心</string>
+    <string name="back">返回</string>
+    <string name="login">登  录</string>
+    <string name="register">注  册</string>
+    <string name="start">开始</string>
+    
+    
+
+</resources>
