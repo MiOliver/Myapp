@@ -16,6 +16,7 @@
         android:orientation="vertical" >
 
         <EditText
+            android:id="@+id/edituser"
             android:layout_width="fill_parent"
             android:layout_height="40dip"
             android:layout_marginLeft="60dip"
@@ -30,6 +31,7 @@
             android:textSize="15sp" />
 
         <EditText
+            android:id="@+id/editpass"
             android:layout_width="fill_parent"
             android:layout_height="40dip"
             android:layout_marginLeft="60dip"

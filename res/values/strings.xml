@@ -29,6 +29,10 @@
     <string name="register">注  册</string>
     <string name="start">开始</string>
     
+    <string name="repair_progress_date_format_deafault">yyyy-MM-dd HH:mm:ss</string>
+    <string name="repair_progress_date_format">yyyy年MM月dd日</string>
+    <string name="order_date_format">%-Y-%-m-%-d</string>
+    
     
 
 </resources>
