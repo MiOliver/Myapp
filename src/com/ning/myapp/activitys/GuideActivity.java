@@ -1,9 +1,9 @@
-package com.ning.app.activitys;
+package com.ning.myapp.activitys;
 
 import java.util.ArrayList;
 
-import com.ning.app.adapter.ViewPagerAdapter;
 import com.ning.myapp.R;
+import com.ning.myapp.adapter.ViewPagerAdapter;
 
 import android.app.Activity;
 import android.content.Intent;

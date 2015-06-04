@@ -1,5 +1,5 @@
 
-package com.ning.app.utils;
+package com.ning.myapp.utils;
 
 import android.content.Context;
 import android.content.Intent;

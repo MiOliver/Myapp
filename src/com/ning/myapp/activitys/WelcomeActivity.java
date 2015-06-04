@@ -1,4 +1,4 @@
-package com.ning.app.activitys;
+package com.ning.myapp.activitys;
 
 
 import com.ning.myapp.R;

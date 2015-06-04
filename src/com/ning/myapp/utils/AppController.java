@@ -1,4 +1,4 @@
-package com.ning.app.utils;
+package com.ning.myapp.utils;
 
 import android.app.Application;
 import android.text.TextUtils;

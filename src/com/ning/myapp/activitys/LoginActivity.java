@@ -1,4 +1,4 @@
-package com.ning.app.activitys;
+package com.ning.myapp.activitys;
 
 import org.json.JSONObject;
 
@@ -16,8 +16,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.ning.app.utils.AppController;
 import com.ning.myapp.R;
+import com.ning.myapp.utils.AppController;
 
 public class LoginActivity extends Activity implements OnClickListener {
 	private static final String TAG = "LoginActivity";
@@ -32,8 +32,8 @@ public class LoginActivity extends Activity implements OnClickListener {
 
 
 	private String tag_json_obj = "json_obj_req";
-	private String url = "http://10.236.121.37:8080/v1/user/user_1433303759544702528";
-	private String loginUrl = "http://127.0.0.1:8080/v1/user/login?";
+	private String url = "http://192.168.1.111:8080/v1/user/user_1433433953177329398";
+	private String loginUrl = "http://192.168.1.111:8080/v1/user/login?";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,9 @@ public class LoginActivity extends Activity implements OnClickListener {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.usercenter);
 		mbtLogin =(Button)findViewById(R.id.btlogin);
+		mbtLogin.setOnClickListener(this);
 		mbtRegister =(Button)findViewById(R.id.btreg); 
+		mbtRegister.setOnClickListener(this);
 		mtUser=(EditText)findViewById(R.id.edituser); 
 		mtUPass=(EditText)findViewById(R.id.editpass); 
 	}
@@ -64,9 +66,12 @@ public class LoginActivity extends Activity implements OnClickListener {
 			username=mtUser.getText().toString();
 			password=mtUPass.getText().toString();
 			String url = loginUrl+"username="+username+"&"+"password="+password;
+			System.out.println(url);
 			getUserinfo(url);
 			break;
 		case R.id.btreg:
+			break;
+		default:
 			break;
 		}
 	}

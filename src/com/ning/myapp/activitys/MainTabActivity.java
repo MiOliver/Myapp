@@ -1,4 +1,4 @@
-package com.ning.app.activitys;
+package com.ning.myapp.activitys;
 
 import java.util.ArrayList;
 
@@ -20,11 +20,11 @@ import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 import android.widget.TabWidget;
 
-import com.ning.app.fragments.Fragment1;
-import com.ning.app.fragments.Fragment2;
-import com.ning.app.fragments.Fragment3;
-import com.ning.app.fragments.Fragment4;
 import com.ning.myapp.R;
+import com.ning.myapp.fragments.Fragment1;
+import com.ning.myapp.fragments.Fragment2;
+import com.ning.myapp.fragments.Fragment3;
+import com.ning.myapp.fragments.Fragment4;
 
 public class MainTabActivity extends FragmentActivity 
 		 {

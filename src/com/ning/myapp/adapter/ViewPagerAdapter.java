@@ -1,4 +1,4 @@
-package com.ning.app.adapter;
+package com.ning.myapp.adapter;
 
 import java.util.ArrayList;
 

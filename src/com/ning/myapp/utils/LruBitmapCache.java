@@ -1,4 +1,4 @@
-package com.ning.app.utils;
+package com.ning.myapp.utils;
 
 import android.graphics.Bitmap;
 import android.util.LruCache;

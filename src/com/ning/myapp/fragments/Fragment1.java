@@ -1,4 +1,4 @@
-package com.ning.app.fragments;
+package com.ning.myapp.fragments;
 
 import com.ning.myapp.R;
 
