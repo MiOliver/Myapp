@@ -572,6 +572,7 @@ public final class R {
         public static final int back=0x7f060015;
         public static final int card=0x7f06000a;
         public static final int cloud=0x7f060004;
+        public static final int exit_on_the_second_back_key_pressed=0x7f06001d;
         public static final int friend=0x7f06000d;
         public static final int game=0x7f060006;
         public static final int gushi=0x7f060009;
@@ -583,14 +584,15 @@ public final class R {
         public static final int lab=0x7f060010;
         public static final int line=0x7f060005;
         public static final int login=0x7f060016;
+        public static final int loginfail=0x7f060019;
         public static final int message=0x7f060007;
         public static final int money=0x7f060003;
-        public static final int order_date_format=0x7f06001b;
+        public static final int order_date_format=0x7f06001c;
         public static final int photo=0x7f06000f;
         public static final int read=0x7f06000e;
         public static final int register=0x7f060017;
-        public static final int repair_progress_date_format=0x7f06001a;
-        public static final int repair_progress_date_format_deafault=0x7f060019;
+        public static final int repair_progress_date_format=0x7f06001b;
+        public static final int repair_progress_date_format_deafault=0x7f06001a;
         public static final int share=0x7f060008;
         public static final int start=0x7f060018;
         public static final int usercenter=0x7f060014;

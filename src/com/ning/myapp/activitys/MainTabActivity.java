@@ -3,7 +3,9 @@ package com.ning.myapp.activitys;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -25,6 +27,9 @@ import com.ning.myapp.fragments.Fragment1;
 import com.ning.myapp.fragments.Fragment2;
 import com.ning.myapp.fragments.Fragment3;
 import com.ning.myapp.fragments.Fragment4;
+import com.ning.myapp.utils.Constants;
+import com.ning.myapp.utils.ToastUtil;
+import com.ning.myapp.utils.Utils;
 
 public class MainTabActivity extends FragmentActivity 
 		 {
@@ -34,6 +39,8 @@ public class MainTabActivity extends FragmentActivity
 	private RadioGroup mTabRg;
 	private ViewPager mViewPage;
 	TabsAdapter mTabsAdapter;
+	private int onbackPresscount=0;
+	
 	private final Class[] fragments = { Fragment1.class, Fragment2.class,
 			Fragment3.class, Fragment4.class };
 
@@ -41,6 +48,13 @@ public class MainTabActivity extends FragmentActivity
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_pager);
+		boolean loginstatus=Utils.Preference.getBooleanPref(getApplicationContext(), Constants.Preference.LOGINSTATUS, false);
+		if(!loginstatus){
+			Intent intent = new Intent();
+    		intent.setClass(MainTabActivity.this,LoginActivity.class);
+    		startActivity(intent);
+    		return;
+		}
 		initView();
 		if (savedInstanceState != null) {
 			mTabHost.setCurrentTabByTag(savedInstanceState.getString("tab"));
@@ -231,5 +245,35 @@ public class MainTabActivity extends FragmentActivity
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		onbackPresscount++;
+		if(onbackPresscount==2){
+			super.onBackPressed();
+			finish();
+		}else{
+			ToastUtil.show(this, R.string.exit_on_the_second_back_key_pressed);
+			new Handler().postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					onbackPresscount = 0;
+				}
+			}, 2*1000);
+		}
+	}
+
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		//delete login infomation
+		Utils.Preference.setBooleanPref(getApplicationContext(), Constants.Preference.LOGINSTATUS, false);
+	}
+	
+	
+	
+	
 
 }
