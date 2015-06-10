@@ -39,7 +39,8 @@ public class LoginActivity extends Activity implements OnClickListener {
 	private String tag_json_obj = "json_obj_req";
 	private String tag_string_req= "tag_string_req";
 	private String url = "http://192.168.1.111:8080/v1/user/user_1433433953177329398";
-	private String loginUrl = "http://192.168.1.111:8080/v1/user/login?";
+//	private String loginUrl = "http://192.168.1.111:8080/v1/user/login?";
+	private String loginUrl = "http://10.236.121.37:8080/v1/user/login?";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

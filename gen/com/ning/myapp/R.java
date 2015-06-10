@@ -8,449 +8,453 @@
 package com.ning.myapp;
 
 public final class R {
+    public static final class anim {
+        public static final int bottomitem_in=0x7f040000;
+        public static final int topitem_in=0x7f040001;
+    }
     public static final class attr {
     }
     public static final class color {
         /**  蜜色 
          */
-        public static final int aliceblue=0x7f04002d;
+        public static final int aliceblue=0x7f05002d;
         /**  亚麻色 
          */
-        public static final int antiquewhite=0x7f040023;
+        public static final int antiquewhite=0x7f050023;
         /**  中灰兰色 
          */
-        public static final int aqua=0x7f040083;
+        public static final int aqua=0x7f050083;
         /**  粟色 
          */
-        public static final int aquamarine=0x7f040064;
+        public static final int aquamarine=0x7f050064;
         /**  沙褐色 
          */
-        public static final int azure=0x7f04002b;
+        public static final int azure=0x7f05002b;
         /**  烟白色 
          */
-        public static final int beige=0x7f040028;
+        public static final int beige=0x7f050028;
         /**  浅玫瑰色 
          */
-        public static final int bisque=0x7f04000e;
+        public static final int bisque=0x7f05000e;
         /**  海军色 
          */
-        public static final int black=0x7f040092;
+        public static final int black=0x7f050092;
         /**  番木色 
          */
-        public static final int blanchedalmond=0x7f04000c;
+        public static final int blanchedalmond=0x7f05000c;
         /**  暗绿色 
          */
-        public static final int blue=0x7f04008e;
+        public static final int blue=0x7f05008e;
         /**  暗红色 
          */
-        public static final int blueviolet=0x7f04005c;
+        public static final int blueviolet=0x7f05005c;
         /**  暗灰色 
          */
-        public static final int brown=0x7f040051;
+        public static final int brown=0x7f050051;
         /**  亮青色 
          */
-        public static final int burlywood=0x7f040035;
+        public static final int burlywood=0x7f050035;
         /**  菊兰色 
          */
-        public static final int cadetblue=0x7f040072;
+        public static final int cadetblue=0x7f050072;
         /**  碧绿色 
          */
-        public static final int chartreuse=0x7f040065;
+        public static final int chartreuse=0x7f050065;
         /**  茶色 
          */
-        public static final int chocolate=0x7f040040;
+        public static final int chocolate=0x7f050040;
         /**  暗桔黄色 
          */
-        public static final int coral=0x7f040018;
+        public static final int coral=0x7f050018;
         /**  中绿色 
          */
-        public static final int cornflowerblue=0x7f040071;
+        public static final int cornflowerblue=0x7f050071;
         /**  柠檬绸色 
          */
-        public static final int cornsilk=0x7f040008;
+        public static final int cornsilk=0x7f050008;
         /**  淡灰色 
          */
-        public static final int crimson=0x7f040038;
+        public static final int crimson=0x7f050038;
         /**  浅绿色 
          */
-        public static final int cyan=0x7f040084;
+        public static final int cyan=0x7f050084;
         /**  中兰色 
          */
-        public static final int darkblue=0x7f040090;
+        public static final int darkblue=0x7f050090;
         /**  深天蓝色 
          */
-        public static final int darkcyan=0x7f04008a;
+        public static final int darkcyan=0x7f05008a;
         /**  中粉紫色 
          */
-        public static final int darkgoldenrod=0x7f040048;
+        public static final int darkgoldenrod=0x7f050048;
         /**  亮蓝色 
          */
-        public static final int darkgray=0x7f04004f;
+        public static final int darkgray=0x7f05004f;
         /**  绿色 
          */
-        public static final int darkgreen=0x7f04008d;
+        public static final int darkgreen=0x7f05008d;
         /**  暗灰色 
          */
-        public static final int darkgrey=0x7f040050;
+        public static final int darkgrey=0x7f050050;
         /**  银色 
          */
-        public static final int darkkhaki=0x7f040045;
+        public static final int darkkhaki=0x7f050045;
         /**  重褐色 
          */
-        public static final int darkmagenta=0x7f04005a;
+        public static final int darkmagenta=0x7f05005a;
         /**  军兰色 
          */
-        public static final int darkolivegreen=0x7f040073;
+        public static final int darkolivegreen=0x7f050073;
         /**  亮肉色 
          */
-        public static final int darkorange=0x7f040017;
+        public static final int darkorange=0x7f050017;
         /**  赭色 
          */
-        public static final int darkorchid=0x7f040053;
+        public static final int darkorchid=0x7f050053;
         /**  暗洋红 
          */
-        public static final int darkred=0x7f04005b;
+        public static final int darkred=0x7f05005b;
         /**  紫罗兰色 
          */
-        public static final int darksalmon=0x7f040032;
+        public static final int darksalmon=0x7f050032;
         /**  亮绿色 
          */
-        public static final int darkseagreen=0x7f040058;
+        public static final int darkseagreen=0x7f050058;
         /**  中绿宝石 
          */
-        public static final int darkslateblue=0x7f040076;
+        public static final int darkslateblue=0x7f050076;
         /**  橙绿色 
          */
-        public static final int darkslategray=0x7f04007c;
+        public static final int darkslategray=0x7f05007c;
         /**  暗瓦灰色 
          */
-        public static final int darkslategrey=0x7f04007d;
+        public static final int darkslategrey=0x7f05007d;
         /**  中春绿色 
          */
-        public static final int darkturquoise=0x7f040088;
+        public static final int darkturquoise=0x7f050088;
         /**  苍绿色 
          */
-        public static final int darkviolet=0x7f040055;
+        public static final int darkviolet=0x7f050055;
         /**  红橙色 
          */
-        public static final int deeppink=0x7f04001c;
+        public static final int deeppink=0x7f05001c;
         /**  暗宝石绿 
          */
-        public static final int deepskyblue=0x7f040089;
+        public static final int deepskyblue=0x7f050089;
         /**  白色 
          */
-        public static final int default_gray=0x7f040001;
+        public static final int default_gray=0x7f050001;
         /**  石蓝色 
          */
-        public static final int dimgray=0x7f04006e;
+        public static final int dimgray=0x7f05006e;
         /**  暗灰色 
          */
-        public static final int dimgrey=0x7f04006f;
+        public static final int dimgrey=0x7f05006f;
         /**  亮海蓝色 
          */
-        public static final int dodgerblue=0x7f040081;
+        public static final int dodgerblue=0x7f050081;
         /**  暗金黄色 
          */
-        public static final int firebrick=0x7f040049;
+        public static final int firebrick=0x7f050049;
         /**  雪白色 
          */
-        public static final int floralwhite=0x7f040006;
+        public static final int floralwhite=0x7f050006;
         /**  海绿色 
          */
-        public static final int forestgreen=0x7f04007f;
+        public static final int forestgreen=0x7f05007f;
         /**  深粉红色 
          */
-        public static final int fuchsia=0x7f04001d;
+        public static final int fuchsia=0x7f05001d;
         /**  洋李色 
          */
-        public static final int gainsboro=0x7f040037;
+        public static final int gainsboro=0x7f050037;
         /**  鲜肉色 
          */
-        public static final int ghostwhite=0x7f040025;
+        public static final int ghostwhite=0x7f050025;
         /**  桃色 
          */
-        public static final int gold=0x7f040012;
+        public static final int gold=0x7f050012;
         /**  苍紫罗兰色 
          */
-        public static final int goldenrod=0x7f04003a;
+        public static final int goldenrod=0x7f05003a;
         /**  天蓝色 
          */
-        public static final int gray=0x7f04005f;
+        public static final int gray=0x7f05005f;
         /**  水鸭色 
          */
-        public static final int green=0x7f04008c;
+        public static final int green=0x7f05008c;
         /**  苍宝石绿 
          */
-        public static final int greenyellow=0x7f04004d;
+        public static final int greenyellow=0x7f05004d;
         /**  灰色 
          */
-        public static final int grey=0x7f040060;
+        public static final int grey=0x7f050060;
         /**  天蓝色 
          */
-        public static final int honeydew=0x7f04002c;
+        public static final int honeydew=0x7f05002c;
         /**  珊瑚色 
          */
-        public static final int hotpink=0x7f040019;
+        public static final int hotpink=0x7f050019;
         /**  秘鲁色 
          */
-        public static final int indianred=0x7f040042;
+        public static final int indianred=0x7f050042;
         /**  暗橄榄绿 
          */
-        public static final int indigo=0x7f040074;
+        public static final int indigo=0x7f050074;
         /**  默认灰色 
          */
-        public static final int ivory=0x7f040002;
+        public static final int ivory=0x7f050002;
         /**  艾利斯兰 
          */
-        public static final int khaki=0x7f04002e;
+        public static final int khaki=0x7f05002e;
         /**  暗肉色 
          */
-        public static final int lavender=0x7f040033;
+        public static final int lavender=0x7f050033;
         /**  海贝色 
          */
-        public static final int lavenderblush=0x7f04000a;
+        public static final int lavenderblush=0x7f05000a;
         /**  黄绿色 
          */
-        public static final int lawngreen=0x7f040066;
+        public static final int lawngreen=0x7f050066;
         /**  花白色 
          */
-        public static final int lemonchiffon=0x7f040007;
+        public static final int lemonchiffon=0x7f050007;
         /**  黄绿色 
          */
-        public static final int lightblue=0x7f04004e;
+        public static final int lightblue=0x7f05004e;
         /**  黄褐色 
          */
-        public static final int lightcoral=0x7f04002f;
+        public static final int lightcoral=0x7f05002f;
         /**  淡紫色 
          */
-        public static final int lightcyan=0x7f040034;
+        public static final int lightcyan=0x7f050034;
         /**  老花色 
          */
-        public static final int lightgoldenrodyellow=0x7f040021;
+        public static final int lightgoldenrodyellow=0x7f050021;
         /**  蓟色 
          */
-        public static final int lightgray=0x7f04003d;
+        public static final int lightgray=0x7f05003d;
         /**  中紫色 
          */
-        public static final int lightgreen=0x7f040057;
+        public static final int lightgreen=0x7f050057;
         /**  亮灰色 
          */
-        public static final int lightgrey=0x7f04003e;
+        public static final int lightgrey=0x7f05003e;
         /**  粉红色 
          */
-        public static final int lightpink=0x7f040014;
+        public static final int lightpink=0x7f050014;
         /**  橙色 
          */
-        public static final int lightsalmon=0x7f040016;
+        public static final int lightsalmon=0x7f050016;
         /**  森林绿 
          */
-        public static final int lightseagreen=0x7f040080;
+        public static final int lightseagreen=0x7f050080;
         /**  紫罗兰蓝色 
          */
-        public static final int lightskyblue=0x7f04005d;
+        public static final int lightskyblue=0x7f05005d;
         /**  中暗蓝色 
          */
-        public static final int lightslategray=0x7f040068;
+        public static final int lightslategray=0x7f050068;
         /**  亮蓝灰 
          */
-        public static final int lightslategrey=0x7f040069;
+        public static final int lightslategrey=0x7f050069;
         /**  粉蓝色 
          */
-        public static final int lightsteelblue=0x7f04004b;
+        public static final int lightsteelblue=0x7f05004b;
         /**  象牙色 
          */
-        public static final int lightyellow=0x7f040003;
+        public static final int lightyellow=0x7f050003;
         /**  春绿色 
          */
-        public static final int lime=0x7f040086;
+        public static final int lime=0x7f050086;
         /**  中海蓝 
          */
-        public static final int limegreen=0x7f04007b;
+        public static final int limegreen=0x7f05007b;
         /**  亮金黄色 
          */
-        public static final int linen=0x7f040022;
+        public static final int linen=0x7f050022;
         /**  紫红色 
          */
-        public static final int magenta=0x7f04001e;
+        public static final int magenta=0x7f05001e;
         /**  紫色 
          */
-        public static final int maroon=0x7f040063;
+        public static final int maroon=0x7f050063;
         /**  暗灰色 
          */
-        public static final int mediumaquamarine=0x7f040070;
+        public static final int mediumaquamarine=0x7f050070;
         /**  蓝色 
          */
-        public static final int mediumblue=0x7f04008f;
+        public static final int mediumblue=0x7f05008f;
         /**  褐玫瑰红 
          */
-        public static final int mediumorchid=0x7f040047;
+        public static final int mediumorchid=0x7f050047;
         /**  暗紫罗兰色 
          */
-        public static final int mediumpurple=0x7f040056;
+        public static final int mediumpurple=0x7f050056;
         /**  青绿色 
          */
-        public static final int mediumseagreen=0x7f04007a;
+        public static final int mediumseagreen=0x7f05007a;
         /**  草绿色 
          */
-        public static final int mediumslateblue=0x7f040067;
+        public static final int mediumslateblue=0x7f050067;
         /**  酸橙色 
          */
-        public static final int mediumspringgreen=0x7f040087;
+        public static final int mediumspringgreen=0x7f050087;
         /**  靛青色 
          */
-        public static final int mediumturquoise=0x7f040075;
+        public static final int mediumturquoise=0x7f050075;
         /**  印第安红 
          */
-        public static final int mediumvioletred=0x7f040043;
+        public static final int mediumvioletred=0x7f050043;
         /**  闪兰色 
          */
-        public static final int midnightblue=0x7f040082;
+        public static final int midnightblue=0x7f050082;
         /**  幽灵白 
          */
-        public static final int mintcream=0x7f040026;
+        public static final int mintcream=0x7f050026;
         /**  白杏色 
          */
-        public static final int mistyrose=0x7f04000d;
+        public static final int mistyrose=0x7f05000d;
         /**  桔黄色 
          */
-        public static final int moccasin=0x7f04000f;
+        public static final int moccasin=0x7f05000f;
         /**  鹿皮色 
          */
-        public static final int navajowhite=0x7f040010;
+        public static final int navajowhite=0x7f050010;
         /**  暗蓝色 
          */
-        public static final int navy=0x7f040091;
+        public static final int navy=0x7f050091;
         /**  红色 
          */
-        public static final int oldlace=0x7f040020;
+        public static final int oldlace=0x7f050020;
         /**  灰色 
          */
-        public static final int olive=0x7f040061;
+        public static final int olive=0x7f050061;
         /**  灰石色 
          */
-        public static final int olivedrab=0x7f04006c;
+        public static final int olivedrab=0x7f05006c;
         /**  亮粉红色 
          */
-        public static final int orange=0x7f040015;
+        public static final int orange=0x7f050015;
         /**  西红柿色 
          */
-        public static final int orangered=0x7f04001b;
+        public static final int orangered=0x7f05001b;
         /**  金麒麟色 
          */
-        public static final int orchid=0x7f04003b;
+        public static final int orchid=0x7f05003b;
         /**  亮珊瑚色 
          */
-        public static final int palegoldenrod=0x7f040030;
+        public static final int palegoldenrod=0x7f050030;
         /**  暗紫色 
          */
-        public static final int palegreen=0x7f040054;
+        public static final int palegreen=0x7f050054;
         /**  亮钢兰色 
          */
-        public static final int paleturquoise=0x7f04004c;
+        public static final int paleturquoise=0x7f05004c;
         /**  暗深红色 
          */
-        public static final int palevioletred=0x7f040039;
+        public static final int palevioletred=0x7f050039;
         /**  淡紫红 
          */
-        public static final int papayawhip=0x7f04000b;
+        public static final int papayawhip=0x7f05000b;
         /**  纳瓦白 
          */
-        public static final int peachpuff=0x7f040011;
+        public static final int peachpuff=0x7f050011;
         /**  巧可力色 
          */
-        public static final int peru=0x7f040041;
+        public static final int peru=0x7f050041;
         /**  金色 
          */
-        public static final int pink=0x7f040013;
+        public static final int pink=0x7f050013;
         /**  实木色 
          */
-        public static final int plum=0x7f040036;
+        public static final int plum=0x7f050036;
         /**  火砖色 
          */
-        public static final int powderblue=0x7f04004a;
+        public static final int powderblue=0x7f05004a;
         /**  橄榄色 
          */
-        public static final int purple=0x7f040062;
+        public static final int purple=0x7f050062;
         /**  红紫色 
          */
-        public static final int red=0x7f04001f;
+        public static final int red=0x7f05001f;
         /**  暗黄褐色 
          */
-        public static final int rosybrown=0x7f040046;
+        public static final int rosybrown=0x7f050046;
         /**  钢兰色 
          */
-        public static final int royalblue=0x7f040078;
+        public static final int royalblue=0x7f050078;
         /**  暗海兰色 
          */
-        public static final int saddlebrown=0x7f040059;
+        public static final int saddlebrown=0x7f050059;
         /**  古董白 
          */
-        public static final int salmon=0x7f040024;
+        public static final int salmon=0x7f050024;
         /**  浅黄色 
          */
-        public static final int sandybrown=0x7f04002a;
+        public static final int sandybrown=0x7f05002a;
         /**  暗瓦灰色 
          */
-        public static final int seagreen=0x7f04007e;
+        public static final int seagreen=0x7f05007e;
         /**  米绸色 
          */
-        public static final int seashell=0x7f040009;
+        public static final int seashell=0x7f050009;
         /**  褐色 
          */
-        public static final int sienna=0x7f040052;
+        public static final int sienna=0x7f050052;
         /**  中紫罗兰色 
          */
-        public static final int silver=0x7f040044;
+        public static final int silver=0x7f050044;
         /**  亮天蓝色 
          */
-        public static final int skyblue=0x7f04005e;
+        public static final int skyblue=0x7f05005e;
         /**  深绿褐色 
          */
-        public static final int slateblue=0x7f04006d;
+        public static final int slateblue=0x7f05006d;
         /**  亮蓝灰 
          */
-        public static final int slategray=0x7f04006a;
+        public static final int slategray=0x7f05006a;
         /**  灰石色 
          */
-        public static final int slategrey=0x7f04006b;
+        public static final int slategrey=0x7f05006b;
         /**  黄色 
          */
-        public static final int snow=0x7f040005;
+        public static final int snow=0x7f050005;
         /**  青色 
          */
-        public static final int springgreen=0x7f040085;
+        public static final int springgreen=0x7f050085;
         /**  暗灰蓝色 
          */
-        public static final int steelblue=0x7f040077;
-        public static final int tab_selector_tv_color=0x7f040093;
+        public static final int steelblue=0x7f050077;
+        public static final int tab_selector_tv_color=0x7f050093;
         /**  亮灰色 
          */
-        public static final int tan=0x7f04003f;
+        public static final int tan=0x7f05003f;
         /**  暗青色 
          */
-        public static final int teal=0x7f04008b;
+        public static final int teal=0x7f05008b;
         /**  淡紫色 
          */
-        public static final int thistle=0x7f04003c;
+        public static final int thistle=0x7f05003c;
         /**  热粉红色 
          */
-        public static final int tomato=0x7f04001a;
+        public static final int tomato=0x7f05001a;
         /**  皇家蓝 
          */
-        public static final int turquoise=0x7f040079;
+        public static final int turquoise=0x7f050079;
         /**  苍麒麟色 
          */
-        public static final int violet=0x7f040031;
+        public static final int violet=0x7f050031;
         /**  米色 
          */
-        public static final int wheat=0x7f040029;
-        public static final int white=0x7f040000;
+        public static final int wheat=0x7f050029;
+        public static final int white=0x7f050000;
         /**  薄荷色 
          */
-        public static final int whitesmoke=0x7f040027;
+        public static final int whitesmoke=0x7f050027;
         /**  亮黄色 
          */
-        public static final int yellow=0x7f040004;
+        public static final int yellow=0x7f050004;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -460,8 +464,8 @@ public final class R {
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
     
          */
-        public static final int activity_horizontal_margin=0x7f050000;
-        public static final int activity_vertical_margin=0x7f050001;
+        public static final int activity_horizontal_margin=0x7f060000;
+        public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
         public static final int bg_edittext=0x7f020000;
@@ -515,35 +519,36 @@ public final class R {
         public static final int welcome_background=0x7f020030;
     }
     public static final class id {
-        public static final int about=0x7f090017;
-        public static final int action_settings=0x7f090016;
-        public static final int btlogin=0x7f090012;
-        public static final int btreg=0x7f090013;
-        public static final int btuserback=0x7f090014;
-        public static final int button1=0x7f090009;
-        public static final int button2=0x7f09000a;
-        public static final int cancle=0x7f090019;
-        public static final int cancle2=0x7f09001b;
-        public static final int circle=0x7f090007;
-        public static final int editpass=0x7f090011;
-        public static final int edituser=0x7f090010;
-        public static final int fragment1=0x7f090008;
-        public static final int fragment2=0x7f09000b;
-        public static final int fragment4=0x7f09000c;
-        public static final int include1=0x7f09000e;
-        public static final int loginedit=0x7f09000f;
-        public static final int pager=0x7f090001;
-        public static final int play=0x7f09001c;
-        public static final int refresh=0x7f090018;
-        public static final int setting=0x7f09001a;
-        public static final int settingtitle=0x7f090015;
-        public static final int startBtn=0x7f09000d;
-        public static final int tab_rb_1=0x7f090003;
-        public static final int tab_rb_2=0x7f090004;
-        public static final int tab_rb_3=0x7f090005;
-        public static final int tab_rb_4=0x7f090006;
-        public static final int tab_rg_menu=0x7f090002;
-        public static final int viewpager=0x7f090000;
+        public static final int about=0x7f0a0018;
+        public static final int action_settings=0x7f0a0017;
+        public static final int btlogin=0x7f0a0013;
+        public static final int btreg=0x7f0a0014;
+        public static final int btuserback=0x7f0a0015;
+        public static final int button1=0x7f0a0009;
+        public static final int button2=0x7f0a000a;
+        public static final int cancle=0x7f0a001a;
+        public static final int cancle2=0x7f0a001c;
+        public static final int circle=0x7f0a0007;
+        public static final int editpass=0x7f0a0012;
+        public static final int edituser=0x7f0a0011;
+        public static final int fragment1=0x7f0a0008;
+        public static final int fragment2=0x7f0a000b;
+        public static final int fragment4=0x7f0a000c;
+        public static final int include1=0x7f0a000f;
+        public static final int loginedit=0x7f0a0010;
+        public static final int pager=0x7f0a0001;
+        public static final int play=0x7f0a001d;
+        public static final int refresh=0x7f0a0019;
+        public static final int setting=0x7f0a001b;
+        public static final int settingtitle=0x7f0a0016;
+        public static final int startBtn=0x7f0a000d;
+        public static final int tab_rb_1=0x7f0a0003;
+        public static final int tab_rb_2=0x7f0a0004;
+        public static final int tab_rb_3=0x7f0a0005;
+        public static final int tab_rb_4=0x7f0a0006;
+        public static final int tab_rg_menu=0x7f0a0002;
+        public static final int viewpager=0x7f0a0000;
+        public static final int zListView=0x7f0a000e;
     }
     public static final class layout {
         public static final int activity_guide=0x7f030000;
@@ -559,43 +564,44 @@ public final class R {
         public static final int guide_view02=0x7f03000a;
         public static final int guide_view03=0x7f03000b;
         public static final int guide_view04=0x7f03000c;
-        public static final int usercenter=0x7f03000d;
-        public static final int userheader=0x7f03000e;
+        public static final int recentblogs=0x7f03000d;
+        public static final int usercenter=0x7f03000e;
+        public static final int userheader=0x7f03000f;
     }
     public static final class menu {
-        public static final int main=0x7f080000;
+        public static final int main=0x7f090000;
     }
     public static final class string {
-        public static final int about=0x7f06000c;
-        public static final int action_settings=0x7f06000b;
-        public static final int app_name=0x7f060000;
-        public static final int back=0x7f060015;
-        public static final int card=0x7f06000a;
-        public static final int cloud=0x7f060004;
-        public static final int exit_on_the_second_back_key_pressed=0x7f06001d;
-        public static final int friend=0x7f06000d;
-        public static final int game=0x7f060006;
-        public static final int gushi=0x7f060009;
-        public static final int heart=0x7f060002;
-        public static final int hello_world=0x7f060001;
-        public static final int hintpass=0x7f060013;
-        public static final int hintuser=0x7f060012;
-        public static final int info=0x7f060011;
-        public static final int lab=0x7f060010;
-        public static final int line=0x7f060005;
-        public static final int login=0x7f060016;
-        public static final int loginfail=0x7f060019;
-        public static final int message=0x7f060007;
-        public static final int money=0x7f060003;
-        public static final int order_date_format=0x7f06001c;
-        public static final int photo=0x7f06000f;
-        public static final int read=0x7f06000e;
-        public static final int register=0x7f060017;
-        public static final int repair_progress_date_format=0x7f06001b;
-        public static final int repair_progress_date_format_deafault=0x7f06001a;
-        public static final int share=0x7f060008;
-        public static final int start=0x7f060018;
-        public static final int usercenter=0x7f060014;
+        public static final int about=0x7f07000c;
+        public static final int action_settings=0x7f07000b;
+        public static final int app_name=0x7f070000;
+        public static final int back=0x7f070015;
+        public static final int card=0x7f07000a;
+        public static final int cloud=0x7f070004;
+        public static final int exit_on_the_second_back_key_pressed=0x7f07001d;
+        public static final int friend=0x7f07000d;
+        public static final int game=0x7f070006;
+        public static final int gushi=0x7f070009;
+        public static final int heart=0x7f070002;
+        public static final int hello_world=0x7f070001;
+        public static final int hintpass=0x7f070013;
+        public static final int hintuser=0x7f070012;
+        public static final int info=0x7f070011;
+        public static final int lab=0x7f070010;
+        public static final int line=0x7f070005;
+        public static final int login=0x7f070016;
+        public static final int loginfail=0x7f070019;
+        public static final int message=0x7f070007;
+        public static final int money=0x7f070003;
+        public static final int order_date_format=0x7f07001c;
+        public static final int photo=0x7f07000f;
+        public static final int read=0x7f07000e;
+        public static final int register=0x7f070017;
+        public static final int repair_progress_date_format=0x7f07001b;
+        public static final int repair_progress_date_format_deafault=0x7f07001a;
+        public static final int share=0x7f070008;
+        public static final int start=0x7f070018;
+        public static final int usercenter=0x7f070014;
     }
     public static final class style {
         /** 
@@ -619,13 +625,232 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f080001;
         /**  <item name="android:background" >@drawable/tab_selector_checked_bg</item> 
          */
-        public static final int tab_rb_style=0x7f070002;
+        public static final int tab_rb_style=0x7f080002;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a ListView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ListView_android_divider android:divider}</code></td><td> Drawable or color to draw between list items.</td></tr>
+           <tr><td><code>{@link #ListView_android_dividerHeight android:dividerHeight}</code></td><td> Height of the divider.</td></tr>
+           <tr><td><code>{@link #ListView_android_entries android:entries}</code></td><td> Reference to an array resource that will populate the ListView.</td></tr>
+           <tr><td><code>{@link #ListView_android_footerDividersEnabled android:footerDividersEnabled}</code></td><td> When set to false, the ListView will not draw the divider before each footer view.</td></tr>
+           <tr><td><code>{@link #ListView_android_headerDividersEnabled android:headerDividersEnabled}</code></td><td> When set to false, the ListView will not draw the divider after each header view.</td></tr>
+           <tr><td><code>{@link #ListView_android_overScrollFooter android:overScrollFooter}</code></td><td> Drawable to draw below list content.</td></tr>
+           <tr><td><code>{@link #ListView_android_overScrollHeader android:overScrollHeader}</code></td><td> Drawable to draw above list content.</td></tr>
+           </table>
+           @see #ListView_android_divider
+           @see #ListView_android_dividerHeight
+           @see #ListView_android_entries
+           @see #ListView_android_footerDividersEnabled
+           @see #ListView_android_headerDividersEnabled
+           @see #ListView_android_overScrollFooter
+           @see #ListView_android_overScrollHeader
+         */
+        public static final int[] ListView = {
+            0x010100b2, 0x01010129, 0x0101012a, 0x0101022e,
+            0x0101022f, 0x010102c2, 0x010102c3
+        };
+        /**
+          <p>
+          @attr description
+           Drawable or color to draw between list items. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#divider}.
+          @attr name android:divider
+        */
+        public static final int ListView_android_divider = 1;
+        /**
+          <p>
+          @attr description
+           Height of the divider. Will use the intrinsic height of the divider if this
+             is not specified. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#dividerHeight}.
+          @attr name android:dividerHeight
+        */
+        public static final int ListView_android_dividerHeight = 2;
+        /**
+          <p>
+          @attr description
+           Reference to an array resource that will populate the ListView.  For static content,
+             this is simpler than populating the ListView programmatically. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#entries}.
+          @attr name android:entries
+        */
+        public static final int ListView_android_entries = 0;
+        /**
+          <p>
+          @attr description
+           When set to false, the ListView will not draw the divider before each footer view.
+             The default value is true. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#footerDividersEnabled}.
+          @attr name android:footerDividersEnabled
+        */
+        public static final int ListView_android_footerDividersEnabled = 4;
+        /**
+          <p>
+          @attr description
+           When set to false, the ListView will not draw the divider after each header view.
+             The default value is true. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#headerDividersEnabled}.
+          @attr name android:headerDividersEnabled
+        */
+        public static final int ListView_android_headerDividersEnabled = 3;
+        /**
+          <p>
+          @attr description
+           Drawable to draw below list content. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#overScrollFooter}.
+          @attr name android:overScrollFooter
+        */
+        public static final int ListView_android_overScrollFooter = 6;
+        /**
+          <p>
+          @attr description
+           Drawable to draw above list content. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#overScrollHeader}.
+          @attr name android:overScrollHeader
+        */
+        public static final int ListView_android_overScrollHeader = 5;
+        /** Attributes that can be used with a ZrcAbsListView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ZrcAbsListView_android_cacheColorHint android:cacheColorHint}</code></td><td> Indicates that this list will always be drawn on top of solid, single-color
+             opaque background.</td></tr>
+           <tr><td><code>{@link #ZrcAbsListView_android_choiceMode android:choiceMode}</code></td><td> Defines the choice behavior for the view.</td></tr>
+           <tr><td><code>{@link #ZrcAbsListView_android_drawSelectorOnTop android:drawSelectorOnTop}</code></td><td> When set to true, the selector will be drawn over the selected item.</td></tr>
+           <tr><td><code>{@link #ZrcAbsListView_android_listSelector android:listSelector}</code></td><td> Drawable used to indicate the currently selected item in the list.</td></tr>
+           <tr><td><code>{@link #ZrcAbsListView_android_scrollingCache android:scrollingCache}</code></td><td> When set to true, the list uses a drawing cache during scrolling.</td></tr>
+           <tr><td><code>{@link #ZrcAbsListView_android_smoothScrollbar android:smoothScrollbar}</code></td><td> When set to true, the list will use a more refined calculation
+             method based on the pixels height of the items visible on screen.</td></tr>
+           <tr><td><code>{@link #ZrcAbsListView_android_stackFromBottom android:stackFromBottom}</code></td><td> Used by ListView and GridView to stack their content from the bottom.</td></tr>
+           <tr><td><code>{@link #ZrcAbsListView_android_transcriptMode android:transcriptMode}</code></td><td> Sets the transcript mode for the list.</td></tr>
+           </table>
+           @see #ZrcAbsListView_android_cacheColorHint
+           @see #ZrcAbsListView_android_choiceMode
+           @see #ZrcAbsListView_android_drawSelectorOnTop
+           @see #ZrcAbsListView_android_listSelector
+           @see #ZrcAbsListView_android_scrollingCache
+           @see #ZrcAbsListView_android_smoothScrollbar
+           @see #ZrcAbsListView_android_stackFromBottom
+           @see #ZrcAbsListView_android_transcriptMode
+         */
+        public static final int[] ZrcAbsListView = {
+            0x010100fb, 0x010100fc, 0x010100fd, 0x010100fe,
+            0x01010100, 0x01010101, 0x0101012b, 0x01010231
+        };
+        /**
+          <p>
+          @attr description
+           Indicates that this list will always be drawn on top of solid, single-color
+             opaque background. This allows the list to optimize drawing. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#cacheColorHint}.
+          @attr name android:cacheColorHint
+        */
+        public static final int ZrcAbsListView_android_cacheColorHint = 5;
+        /**
+          <p>
+          @attr description
+           Defines the choice behavior for the view. By default, lists do not have
+             any choice behavior. By setting the choiceMode to singleChoice, the list
+             allows up to one item to be in a chosen state. By setting the choiceMode to
+             multipleChoice, the list allows any number of items to be chosen.
+             Finally, by setting the choiceMode to multipleChoiceModal the list allows
+             any number of items to be chosen in a special selection mode.
+             The application will supply a
+             {@link android.widget.AbsListView.MultiChoiceModeListener} using
+             {@link android.widget.AbsListView#setMultiChoiceModeListener} to control the
+             selection mode. This uses the {@link android.view.ActionMode} API. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#choiceMode}.
+          @attr name android:choiceMode
+        */
+        public static final int ZrcAbsListView_android_choiceMode = 6;
+        /**
+          <p>
+          @attr description
+           When set to true, the selector will be drawn over the selected item.
+             Otherwise the selector is drawn behind the selected item. The default
+             value is false. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#drawSelectorOnTop}.
+          @attr name android:drawSelectorOnTop
+        */
+        public static final int ZrcAbsListView_android_drawSelectorOnTop = 1;
+        /**
+          <p>
+          @attr description
+           Drawable used to indicate the currently selected item in the list. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#listSelector}.
+          @attr name android:listSelector
+        */
+        public static final int ZrcAbsListView_android_listSelector = 0;
+        /**
+          <p>
+          @attr description
+           When set to true, the list uses a drawing cache during scrolling.
+             This makes the rendering faster but uses more memory. The default
+             value is true. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#scrollingCache}.
+          @attr name android:scrollingCache
+        */
+        public static final int ZrcAbsListView_android_scrollingCache = 3;
+        /**
+          <p>
+          @attr description
+           When set to true, the list will use a more refined calculation
+             method based on the pixels height of the items visible on screen. This
+             property is set to true by default but should be set to false if your adapter
+             will display items of varying heights. When this property is set to true and
+             your adapter displays items of varying heights, the scrollbar thumb will
+             change size as the user scrolls through the list. When set to fale, the list
+             will use only the number of items in the adapter and the number of items visible
+             on screen to determine the scrollbar's properties. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#smoothScrollbar}.
+          @attr name android:smoothScrollbar
+        */
+        public static final int ZrcAbsListView_android_smoothScrollbar = 7;
+        /**
+          <p>
+          @attr description
+           Used by ListView and GridView to stack their content from the bottom. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#stackFromBottom}.
+          @attr name android:stackFromBottom
+        */
+        public static final int ZrcAbsListView_android_stackFromBottom = 2;
+        /**
+          <p>
+          @attr description
+           Sets the transcript mode for the list. In transcript mode, the list
+             scrolls to the bottom to make new items visible when they are added. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#transcriptMode}.
+          @attr name android:transcriptMode
+        */
+        public static final int ZrcAbsListView_android_transcriptMode = 4;
+    };
 }
