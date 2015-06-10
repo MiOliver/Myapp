@@ -38,9 +38,7 @@ public class LoginActivity extends Activity implements OnClickListener {
 
 	private String tag_json_obj = "json_obj_req";
 	private String tag_string_req= "tag_string_req";
-	private String url = "http://192.168.1.111:8080/v1/user/user_1433433953177329398";
-//	private String loginUrl = "http://192.168.1.111:8080/v1/user/login?";
-	private String loginUrl = "http://10.236.121.37:8080/v1/user/login?";
+
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +78,7 @@ public class LoginActivity extends Activity implements OnClickListener {
 		case R.id.btlogin:
 			username=mtUser.getText().toString();
 			password=mtUPass.getText().toString();
-			String url = loginUrl+"username="+username+"&"+"password="+password;
+			String url = Constants.Url.User.LOGIN+"username="+username+"&"+"password="+password;
 			System.out.println(url);
 			login(url);
 			break;

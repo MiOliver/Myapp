@@ -2,6 +2,7 @@ package com.ning.myapp.fragments;
 
 import com.ning.myapp.R;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -40,7 +41,8 @@ public class Fragment1 extends Fragment {
 			Bundle savedInstanceState) {
 
 		View parentView = inflater.inflate(R.layout.frag_first, container, false);
-		
+		ActionBar actionBar = getActivity().getActionBar();  
+		actionBar.setTitle("个人笔记");  
 		return parentView;
 	}
 }
