@@ -9,9 +9,15 @@ import org.json.JSONObject;
 
 import android.app.ActionBar;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.AbsoluteSizeSpan;
+import android.text.style.BackgroundColorSpan;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,14 +51,16 @@ public class Fragment2 extends Fragment {
 
 	private ZrcListView listView;
 	private Handler handler;
-	private ArrayList<Blog> msgs;
+	private ArrayList<Blog> msgs = new ArrayList<Blog>();;
 	private int pageId = -1;
 	private MyAdapter adapter;
 	private String tag_json_obj = "json_obj_req";
 	private String tag_string_req = "tag_string_req";
 	private String tag_json_array = "tag_string_array";
 	private Gson gson = new Gson();
-	private ArrayList<Blog> blogArray=new ArrayList<Blog>();
+	private ArrayList<Blog> blogArray;
+	private ArrayList<ArrayList<Blog>> allblogArray=new ArrayList<ArrayList<Blog>>();
+	private static final int pageSize = 10 ;
 
 	private static final String[][] names = new String[][] {
 			{ "加拿大", "瑞典", "澳大利亚", "瑞士", "新西兰", "挪威", "丹麦", "芬兰", "奥地利", "荷兰",
@@ -102,7 +110,7 @@ public class Fragment2 extends Fragment {
 
 		// 设置默认偏移量，主要用于实现透明标题栏功能。（可选）
 		float density = getResources().getDisplayMetrics().density;
-		listView.setFirstTopOffset((int) (50 * density));
+		listView.setFirstTopOffset((int) (0 * density));
 
 		// 设置下拉刷新的样式（可选，但如果没有Header则无法下拉刷新）
 		SimpleHeader header = new SimpleHeader(view.getContext());
@@ -137,7 +145,7 @@ public class Fragment2 extends Fragment {
 
 		adapter = new MyAdapter();
 		listView.setAdapter(adapter);
-		String url = Constants.Url.Blog.ALLBLOG + "user_1433689062285430207";
+		String url = Constants.Url.Blog.ALLBLOG + "user_1433852026322401409";
 		getRcBlogs(url);
 		listView.refresh(); // 主动下拉刷新
 
@@ -151,8 +159,8 @@ public class Fragment2 extends Fragment {
 				int rand = (int) (Math.random() * 2); // 随机数模拟成功失败。这里从有数据开始。
 				if (rand == 0 || pageId == -1) {
 					pageId = 0;
-					msgs = new ArrayList<Blog>();
-					for (Blog blog :blogArray) {
+					msgs.clear();
+					for (Blog blog :allblogArray.get(0)) {
 						msgs.add(blog);
 					}
 					adapter.notifyDataSetChanged();
@@ -170,8 +178,8 @@ public class Fragment2 extends Fragment {
 			@Override
 			public void run() {
 				pageId++;
-				if (pageId < 3) {
-					for (Blog blog :blogArray) {
+				if (pageId < allblogArray.size()) {
+					for (Blog blog :allblogArray.get(pageId)) {
 						msgs.add(blog);
 					}
 					adapter.notifyDataSetChanged();
@@ -201,15 +209,25 @@ public class Fragment2 extends Fragment {
 
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
-			TextView textView;
+			TextView textTitle;
+			TextView textContent;
+			View view;
 			if (convertView == null) {
-				textView = (TextView) getActivity().getLayoutInflater()
-						.inflate(android.R.layout.simple_list_item_1, null);
+				view =  getActivity().getLayoutInflater().inflate(R.layout.listviewitem, null);
 			} else {
-				textView = (TextView) convertView;
+				view = convertView;
 			}
-			textView.setText(msgs.get(position).getBlogTitle());
-			return textView;
+			textTitle=(TextView)view.findViewById(R.id.edlist_text_title);
+			textContent=(TextView)view.findViewById(R.id.edlist_text_content);
+			textTitle.setText(msgs.get(position).getBlogTitle());
+			String content = msgs.get(position).getCreatedTime()+"    "+msgs.get(position).getContent();
+			textContent.setText(content);
+			Spannable span = new SpannableString(textContent.getText());  
+//			span.setSpan(new AbsoluteSizeSpan(58), 11, 16, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);  
+			span.setSpan(new ForegroundColorSpan(Color.BLUE), 0, 10, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);  
+//			span.setSpan(new BackgroundColorSpan(Color.YELLOW), 11, 16, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);  
+			textContent.setText(span);
+			return view;
 		}
 	}
 
@@ -260,16 +278,31 @@ public class Fragment2 extends Fragment {
 					public void onResponse(JSONArray response) {
 						Log.d(TAG, response.toString());
 						Blog blog = null;
-						for (int i = 0; i < response.length(); i++) {
-							 try {
-								JSONObject object = (JSONObject) response.getJSONObject(i);
+						int j = 0;
+						int i=0;
+						allblogArray.clear();
+						for ( i= 0; i < response.length(); i++) {
+							if (i % pageSize == 0) {
+								if (i > 0) {
+									allblogArray.add(blogArray);
+								}
+								blogArray = new ArrayList<Blog>();
+							}
+							try {
+								JSONObject object = (JSONObject) response
+										.getJSONObject(i);
 								System.out.println(object);
-								blog=gson.fromJson(object.toString(), Blog.class);
+								blog = gson.fromJson(object.toString(),
+										Blog.class);
 								blogArray.add(blog);
+
 							} catch (JSONException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
 							}
+						}
+						if(i<=pageSize){
+							allblogArray.add(blogArray);
 						}
 
 					}
