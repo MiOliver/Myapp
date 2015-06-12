@@ -41,6 +41,12 @@
             android:name=".activitys.BlogEditActivity"
             android:label="@string/app_name" >
         </activity>
+         <activity
+            android:name=".activitys.NotesActivity"
+            android:label="@string/app_name" >
+        </activity>
+        
+        
     </application>
 
 </manifest>

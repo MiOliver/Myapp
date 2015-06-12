@@ -51,7 +51,7 @@ public class Fragment2 extends Fragment {
 
 	private ZrcListView listView;
 	private Handler handler;
-	private ArrayList<Blog> msgs = new ArrayList<Blog>();;
+	private ArrayList<Blog> msgs = new ArrayList<Blog>();
 	private int pageId = -1;
 	private MyAdapter adapter;
 	private String tag_json_obj = "json_obj_req";
