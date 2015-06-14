@@ -46,7 +46,8 @@ public class NotesActivity extends Activity {
 	private ListView listview ;
 	private MyAdapter adapter=null;
 	
-	private static final String url=Constants.Url.Category.ALLCATEGORY+"user_1433852026322401409"; 
+//	private static final String url=Constants.Url.Category.ALLCATEGORY+"user_1433852026322401409"; 
+	private static final String url=Constants.Url.Category.ALLCATEGORY+"user_1433689062285430207"; 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

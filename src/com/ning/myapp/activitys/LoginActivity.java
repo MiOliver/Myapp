@@ -18,7 +18,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
+import com.google.gson.Gson;
 import com.ning.myapp.R;
+import com.ning.myapp.entitys.User;
 import com.ning.myapp.utils.AppController;
 import com.ning.myapp.utils.Constants;
 import com.ning.myapp.utils.ToastUtil;
@@ -34,7 +36,7 @@ public class LoginActivity extends Activity implements OnClickListener {
 	
 	private String username;
 	private String password;
-
+	private Gson gson = new Gson();
 
 	private String tag_json_obj = "json_obj_req";
 	private String tag_string_req= "tag_string_req";
@@ -78,7 +80,7 @@ public class LoginActivity extends Activity implements OnClickListener {
 		case R.id.btlogin:
 			username=mtUser.getText().toString();
 			password=mtUPass.getText().toString();
-			String url = Constants.Url.User.LOGIN+"username="+username+"&"+"password="+password;
+			String url = Constants.Url.Userinfo.LOGIN+"username="+username+"&"+"password="+password;
 			System.out.println(url);
 			login(url);
 			break;
@@ -117,8 +119,13 @@ public class LoginActivity extends Activity implements OnClickListener {
 	                @Override
 	                public void onResponse(String response) {
 	                    Log.d(TAG, response.toString());
-	                    if(response.toString().contains("success")){
+	                    if(!response.toString().equals("login failure")){
+	                    	User user = null;
+	                    	user = gson.fromJson(response, User.class);
+	                    	System.out.println(user);
 	                    	Utils.Preference.setBooleanPref(getApplicationContext(), Constants.Preference.LOGINSTATUS, true);
+	                    	Utils.Preference.setStringPref(getApplicationContext(), Constants.Preference.USERID, user.getId());
+	                    	Utils.Preference.setStringPref(getApplicationContext(), Constants.Preference.USERNAME, user.getUsername());
 	                    	Intent intent = new Intent();
 	                		intent.setClass(LoginActivity.this,MainTabActivity.class);
 	                		startActivity(intent);

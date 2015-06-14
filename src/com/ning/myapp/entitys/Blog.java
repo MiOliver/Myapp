@@ -1,7 +1,7 @@
 package com.ning.myapp.entitys;
 
 public class Blog {
-	private String Blogid;
+	private Long Blogid;
 	private Long   BlogCategoryId;
 	private String UserId;
 	private String BlogTitle;
@@ -10,10 +10,10 @@ public class Blog {
 	private String Tags;
 	private String CreatedTime;
 	private int Public;
-	public String getBlogid() {
+	public Long getBlogid() {
 		return Blogid;
 	}
-	public void setBlogid(String blogid) {
+	public void setBlogid(Long blogid) {
 		Blogid = blogid;
 	}
 	public Long getBlogCategoryId() {

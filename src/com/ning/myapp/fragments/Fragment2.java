@@ -145,7 +145,9 @@ public class Fragment2 extends Fragment {
 
 		adapter = new MyAdapter();
 		listView.setAdapter(adapter);
-		String url = Constants.Url.Blog.ALLBLOG + "user_1433852026322401409";
+//		String url = Constants.Url.Blog.ALLBLOG + "user_1433852026322401409";
+		String url = Constants.Url.Bloginfo.ALLBLOG + "user_1433689062285430207";
+		
 		getRcBlogs(url);
 		listView.refresh(); // 主动下拉刷新
 
