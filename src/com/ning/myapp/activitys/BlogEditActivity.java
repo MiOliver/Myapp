@@ -36,7 +36,7 @@ public class BlogEditActivity extends Activity implements OnClickListener {
 	private TextView textContent;
 	private Blog blog;
 	private Gson gson = new Gson();
-	
+	private static int requestCode = 0;
 
 	private String tag_json_obj = "json_obj_req";
 	private String tag_string_req = "tag_string_req";
@@ -66,7 +66,9 @@ public class BlogEditActivity extends Activity implements OnClickListener {
 		case R.id.imb_cate:
 			Intent intent = new Intent();
 			intent.setClass(this, NotesActivity.class);
-			startActivity(intent);
+			intent.setAction(Constants.Action.SELECTNOTE);
+			requestCode = 0;
+			startActivityForResult(intent, requestCode);
 			break;
 		default:
 			break;
@@ -95,7 +97,8 @@ public class BlogEditActivity extends Activity implements OnClickListener {
 	protected void saveBlog() {
 		String title = textTitle.getText().toString();
 		String content = textContent.getText().toString();
-		String userId = Utils.Preference.getStringPref(getApplicationContext(),Constants.Preference.USERID, "");
+		String userId = Utils.Preference.getStringPref(getApplicationContext(),
+				Constants.Preference.USERID, "");
 		blog = new Blog();
 		blog.setBlogid(0L);
 		blog.setBlogCategoryId(2L);
@@ -106,26 +109,29 @@ public class BlogEditActivity extends Activity implements OnClickListener {
 		blog.setPublic(0);
 		blog.setCreatedTime("2015-05-05 12:00:00");
 		blog.setTags("tags");
-		
+
 		String jblog = gson.toJson(blog);
 		System.out.println(jblog);
-		save(Constants.Url.Bloginfo.CREATEBLOG,jblog);
+		save(Constants.Url.Bloginfo.CREATEBLOG, jblog);
 
 	}
 
-	private void save(String url,String requestBody) {
-		JsonObjectRequest jsonReq = new JsonObjectRequest(Method.POST, url,requestBody,
-				new Response.Listener<JSONObject>() {
+	private void save(String url, String requestBody) {
+		JsonObjectRequest jsonReq = new JsonObjectRequest(Method.POST, url,
+				requestBody, new Response.Listener<JSONObject>() {
 
 					@Override
 					public void onResponse(JSONObject response) {
-						String res=response.toString();
-						Log.d(TAG,res );
-						int num =  Integer.parseInt( res.substring(res.length()-1,res.length()));
-						if(num >0){
-							ToastUtil.show(BlogEditActivity.this,R.string.add_blog_success);
-						}else{
-							ToastUtil.show(BlogEditActivity.this,R.string.add_blog_fail);
+						String res = response.toString();
+						Log.d(TAG, res);
+						int num = Integer.parseInt(res.substring(
+								res.length() - 1, res.length()));
+						if (num > 0) {
+							ToastUtil.show(BlogEditActivity.this,
+									R.string.add_blog_success);
+						} else {
+							ToastUtil.show(BlogEditActivity.this,
+									R.string.add_blog_fail);
 						}
 					}
 				}, new Response.ErrorListener() {
@@ -138,6 +144,24 @@ public class BlogEditActivity extends Activity implements OnClickListener {
 
 		// Adding request to request queue
 		AppController.getInstance().addToRequestQueue(jsonReq, tag_string_req);
+	}
+
+	@Override
+	public void startActivityForResult(Intent intent, int requestCode) {
+		// TODO Auto-generated method stub
+		super.startActivityForResult(intent, requestCode);
+		switch (requestCode) {
+		case 0:
+			Long blogId = intent.getLongExtra("blogcategoryId",0L);  
+			System.out.println(blogId);
+			break;
+		case 2:
+			
+			break;
+		default:
+			break;
+		}
+
 	}
 
 	@Override

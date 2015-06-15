@@ -35,7 +35,12 @@ public class Constants {
 			public static final String ALLCATEGORY = "http://10.236.121.37:8080/v1/blogcategory/getUserBlogCategory?userId=";
 			
 		}
+		
 
+	}
+	
+	public static final class Action {
+		public static final String SELECTNOTE = "blogedit.selectblog";
 	}
 
 }
