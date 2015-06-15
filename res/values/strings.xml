@@ -36,6 +36,10 @@
     <string name="hint_title">请输入标题</string>
     <string name="hint_content">请输入内容</string>
     
+    
+    <string name="add_blog_success">添加成功！</string>
+    <string name="add_blog_fail">添加失败！</string>
+    
    	<string name="loginfail">用户名或者密码错误，请重试！</string>
    	
     <string name="repair_progress_date_format_deafault">yyyy-MM-dd HH:mm:ss</string>

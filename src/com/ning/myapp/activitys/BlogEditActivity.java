@@ -119,8 +119,14 @@ public class BlogEditActivity extends Activity implements OnClickListener {
 
 					@Override
 					public void onResponse(JSONObject response) {
-						Log.d(TAG, response.toString());
-
+						String res=response.toString();
+						Log.d(TAG,res );
+						int num =  Integer.parseInt( res.substring(res.length()-1,res.length()));
+						if(num >0){
+							ToastUtil.show(BlogEditActivity.this,R.string.add_blog_success);
+						}else{
+							ToastUtil.show(BlogEditActivity.this,R.string.add_blog_fail);
+						}
 					}
 				}, new Response.ErrorListener() {
 

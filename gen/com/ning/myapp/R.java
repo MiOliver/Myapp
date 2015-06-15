@@ -627,12 +627,14 @@ public final class R {
     public static final class string {
         public static final int about=0x7f07000c;
         public static final int action_settings=0x7f07000b;
+        public static final int add_blog_fail=0x7f07001e;
+        public static final int add_blog_success=0x7f07001d;
         public static final int app_name=0x7f070000;
         public static final int back=0x7f070015;
         public static final int card=0x7f07000a;
         public static final int cloud=0x7f070004;
         public static final int createblog=0x7f070019;
-        public static final int exit_on_the_second_back_key_pressed=0x7f070021;
+        public static final int exit_on_the_second_back_key_pressed=0x7f070023;
         public static final int friend=0x7f07000d;
         public static final int game=0x7f070006;
         public static final int gushi=0x7f070009;
@@ -646,15 +648,15 @@ public final class R {
         public static final int lab=0x7f070010;
         public static final int line=0x7f070005;
         public static final int login=0x7f070016;
-        public static final int loginfail=0x7f07001d;
+        public static final int loginfail=0x7f07001f;
         public static final int message=0x7f070007;
         public static final int money=0x7f070003;
-        public static final int order_date_format=0x7f070020;
+        public static final int order_date_format=0x7f070022;
         public static final int photo=0x7f07000f;
         public static final int read=0x7f07000e;
         public static final int register=0x7f070017;
-        public static final int repair_progress_date_format=0x7f07001f;
-        public static final int repair_progress_date_format_deafault=0x7f07001e;
+        public static final int repair_progress_date_format=0x7f070021;
+        public static final int repair_progress_date_format_deafault=0x7f070020;
         public static final int save=0x7f07001a;
         public static final int share=0x7f070008;
         public static final int start=0x7f070018;

@@ -17,6 +17,7 @@ import com.ning.myapp.entitys.Blog;
 import com.ning.myapp.entitys.BlogCategory;
 import com.ning.myapp.utils.AppController;
 import com.ning.myapp.utils.Constants;
+import com.ning.myapp.utils.Utils;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -46,8 +47,8 @@ public class NotesActivity extends Activity {
 	private ListView listview ;
 	private MyAdapter adapter=null;
 	
-//	private static final String url=Constants.Url.Category.ALLCATEGORY+"user_1433852026322401409"; 
-	private static final String url=Constants.Url.Category.ALLCATEGORY+"user_1433689062285430207"; 
+////	private static final String url=Constants.Url.Category.ALLCATEGORY+"user_1433852026322401409"; 
+	private static String url=Constants.Url.Category.ALLCATEGORY; 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +58,8 @@ public class NotesActivity extends Activity {
 		listview=(ListView)findViewById(R.id.list_category);
 		adapter = new MyAdapter();
 		listview.setAdapter(adapter);
+		String userId = Utils.Preference.getStringPref(getApplicationContext(),Constants.Preference.USERID, "");
+		url+=userId;
 		getAllBlogCategory(url);
 	}
 

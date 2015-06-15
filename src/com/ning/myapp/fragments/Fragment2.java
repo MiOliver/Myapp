@@ -61,6 +61,8 @@ public class Fragment2 extends Fragment {
 	private ArrayList<Blog> blogArray;
 	private ArrayList<ArrayList<Blog>> allblogArray=new ArrayList<ArrayList<Blog>>();
 	private static final int pageSize = 10 ;
+	
+	private static String url = Constants.Url.Bloginfo.ALLBLOG;
 
 	private static final String[][] names = new String[][] {
 			{ "加拿大", "瑞典", "澳大利亚", "瑞士", "新西兰", "挪威", "丹麦", "芬兰", "奥地利", "荷兰",
@@ -145,16 +147,15 @@ public class Fragment2 extends Fragment {
 
 		adapter = new MyAdapter();
 		listView.setAdapter(adapter);
-//		String url = Constants.Url.Blog.ALLBLOG + "user_1433852026322401409";
-		String url = Constants.Url.Bloginfo.ALLBLOG + "user_1433689062285430207";
 		
-		getRcBlogs(url);
 		listView.refresh(); // 主动下拉刷新
 
 		return view;
 	}
 
 	private void refresh() {
+		String userId=Utils.Preference.getStringPref(getActivity().getApplicationContext(),Constants.Preference.USERID, "");
+		getRcBlogs(url+userId);
 		handler.postDelayed(new Runnable() {
 			@Override
 			public void run() {
