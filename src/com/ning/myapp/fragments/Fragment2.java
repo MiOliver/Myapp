@@ -306,7 +306,10 @@ public class Fragment2 extends Fragment {
 						}
 						if(i<=pageSize){
 							allblogArray.add(blogArray);
+						}else if(i % pageSize != 0){
+							allblogArray.add(blogArray);
 						}
+						
 
 					}
 				}, new Response.ErrorListener() {

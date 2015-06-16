@@ -63,11 +63,12 @@ public class NotesActivity extends Activity implements OnItemClickListener,
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.categorys);
+		handleIntent();
 		listview = (ListView) findViewById(R.id.list_category);
 		adapter = new MyAdapter();
 		listview.setAdapter(adapter);
-		String userId = Utils.Preference.getStringPref(getApplicationContext(),
-				Constants.Preference.USERID, "");
+		listview.setOnItemClickListener(this);
+		String userId = Utils.Preference.getStringPref(getApplicationContext(),Constants.Preference.USERID, "");
 		url += userId;
 		getAllBlogCategory(url);
 	}
@@ -197,13 +198,15 @@ public class NotesActivity extends Activity implements OnItemClickListener,
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View item, int position,
 			long arg3) {
-		// TODO Auto-generated method stub
 		BlogCategory bcate = (BlogCategory) adapter.getItem(position);
-		Intent mIntent = new Intent();
-		mIntent.putExtra("blogcategoryId", bcate.getId());
-		mIntent.putExtra("change02", "2000"); // 设置结果，并进行传送
-		this.setResult(resultCode, mIntent);
-		this.finish();
+		
+		if(mAction.equals(Constants.Action.SELECTNOTE)){
+			Intent mIntent = new Intent();
+			mIntent.putExtra("blogcategoryId", bcate.getId());
+			this.setResult(resultCode, mIntent);
+			this.finish();
+		}
+		
 	}
 
 	@Override

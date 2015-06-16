@@ -32,6 +32,9 @@
     <string name="createblog">添加</string>
     <string name="save">保存</string>
     
+    <string name="update">更新</string>
+    <string name="delete">删除</string>
+    
     
     <string name="hint_title">请输入标题</string>
     <string name="hint_content">请输入内容</string>
