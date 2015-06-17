@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.ning.myapp.BlogEditActivity" >
+
+    <item
+        android:id="@+id/blog_save"
+        android:icon="@drawable/yes"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="@string/update"/>
+    <item
+        android:id="@+id/blog_clear"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/delete"/>
+
+</menu>
