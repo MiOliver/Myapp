@@ -246,6 +246,7 @@ public class MainTabActivity extends FragmentActivity
 		case  R.id.action_create:
 			Intent intent = new Intent();
 			intent.setClass(this, BlogEditActivity.class);
+			intent.setAction(Constants.Action.BLOGEDIT);
 			startActivity(intent);
 			break;
 		default :

@@ -41,6 +41,8 @@ public class Constants {
 	
 	public static final class Action {
 		public static final String SELECTNOTE = "blogedit.selectblog";
+		public static final String BLOGVIEW = "blogedit.blogview";
+		public static final String BLOGEDIT = "blogedit.blogedit";
 	}
 
 }

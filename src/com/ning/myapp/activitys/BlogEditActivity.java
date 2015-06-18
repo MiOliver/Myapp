@@ -3,6 +3,7 @@ package com.ning.myapp.activitys;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
@@ -23,6 +24,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.gson.Gson;
 import com.ning.myapp.R;
 import com.ning.myapp.entitys.Blog;
+import com.ning.myapp.fragments.BlogViewFragment;
 import com.ning.myapp.fragments.EditBlogFragment;
 import com.ning.myapp.utils.AppController;
 import com.ning.myapp.utils.Constants;
@@ -32,7 +34,6 @@ import com.ning.myapp.utils.Utils;
 public class BlogEditActivity extends Activity implements OnClickListener {
 
 
-
 	private static final String TAG = "BlogEditActivity";
 	private ImageButton catebutton;
 	private TextView textTitle;
@@ -40,28 +41,56 @@ public class BlogEditActivity extends Activity implements OnClickListener {
 	private Blog blog;
 	private Gson gson = new Gson();
 	private static int requestCode = 0;
-	private Long blogId=0L;
+	private Long blogId = 0L;
+	private Intent intent = null;
+	private String mActon = null;
 
 	private String tag_json_obj = "json_obj_req";
 	private String tag_string_req = "tag_string_req";
+	private Fragment blogfragment;
+//	private BlogViewFragment blogviewfragment;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.editblogcontainer);
-//		textTitle = (TextView) findViewById(R.id.ed_blog_title);
-//		textContent = (TextView) findViewById(R.id.ed_blog_content);
-//		catebutton = (ImageButton) findViewById(R.id.imb_cate);
-//		catebutton.setOnClickListener(this);
-		setUpFragment();
+		handleIntent();
+
+		if (mActon.equals(Constants.Action.BLOGVIEW)) {
+			setUpFragment(R.id.blogviewId);
+		} else if (mActon.equals(Constants.Action.BLOGEDIT)) {
+			setUpFragment(R.id.editblogId);
+		}
+
 	}
-	public void setUpFragment(){
+
+	public void handleIntent() {
+		intent = getIntent();
+		mActon = intent.getAction();
+	}
+
+	public void setUpFragment(int fragmentId) {
 		FragmentManager fragmentManager = getFragmentManager();
 		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-		
-		EditBlogFragment editfragment = new EditBlogFragment();
-		fragmentTransaction.add(R.id.editblogcontainer, editfragment);
+		switch (fragmentId) {
+		case R.id.editblogId :
+			blogfragment= (EditBlogFragment) fragmentManager.findFragmentById(R.id.editblogId);
+			if(blogfragment==null){
+				blogfragment = new EditBlogFragment();
+			}
+			break;
+		case R.id.blogviewId:
+			blogfragment= (BlogViewFragment) fragmentManager.findFragmentById(R.id.blogviewId);
+			if(blogfragment==null){
+				blogfragment = new BlogViewFragment();
+			}
+			break;
+		default:
+			break;
+		}
+		fragmentTransaction.replace(R.id.editblogcontainer, blogfragment);
+		//fragmentTransaction.add(R.id.editblogcontainer, editfragment);
 		fragmentTransaction.commit();
 	}
 
@@ -96,7 +125,6 @@ public class BlogEditActivity extends Activity implements OnClickListener {
 		int id = item.getItemId();
 		switch (id) {
 		case R.id.action_save:
-			saveBlog();
 			break;
 		case R.id.action_clear:
 			break;
@@ -107,76 +135,19 @@ public class BlogEditActivity extends Activity implements OnClickListener {
 		return super.onOptionsItemSelected(item);
 	}
 
-	protected void saveBlog() {
-		String title = textTitle.getText().toString();
-		String content = textContent.getText().toString();
-		String userId = Utils.Preference.getStringPref(getApplicationContext(),Constants.Preference.USERID, "");
-		blog = new Blog();
-		blog.setBlogid(0L);
-		blog.setBlogCategoryId(blogId);
-		blog.setUserId(userId);
-		blog.setBlogTitle(title);
-		blog.setContent(content);
-		blog.setImageUrl("image");
-		blog.setPublic(0);
-		blog.setCreatedTime("2015-05-05 12:00:00");
-		blog.setTags("tags");
-
-		String jblog = gson.toJson(blog);
-		System.out.println(jblog);
-		save(Constants.Url.Bloginfo.CREATEBLOG, jblog);
-	}
-
-	private void save(String url, String requestBody) {
-		JsonObjectRequest jsonReq = new JsonObjectRequest(Method.POST, url,
-				requestBody, new Response.Listener<JSONObject>() {
-
-					@Override
-					public void onResponse(JSONObject response) {
-						String res = response.toString();
-						Log.d(TAG, res);
-						int num = Integer.parseInt( res.substring(res.length() - 2, res.length()-1) );
-						if (num > 0) {
-							ToastUtil.show(BlogEditActivity.this,R.string.add_blog_success);
-							BlogEditActivity.this.finish();
-						} else {
-							ToastUtil.show(BlogEditActivity.this,R.string.add_blog_fail);
-						}
-					}
-				}, new Response.ErrorListener() {
-
-					@Override
-					public void onErrorResponse(VolleyError error) {
-						VolleyLog.d(TAG, "Error: " + error.getMessage());
-					}
-				});
-
-		// Adding request to request queue
-		AppController.getInstance().addToRequestQueue(jsonReq, tag_string_req);
-	}
-
 	
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
-		// TODO Auto-generated method stub
-		super.onActivityResult(requestCode, resultCode, intent);
-		switch (requestCode) {
-		case 0:
-			blogId = intent.getLongExtra("blogcategoryId",0L);  
-			System.out.println(blogId);
-			break;
-		case 2:
-			
-			break;
-		default:
-			break;
-		}
-	}
-
 	@Override
 	protected void onDestroy() {
 		// TODO Auto-generated method stub
 		super.onDestroy();
+	}
+	
+	public Long getBlogId() {
+		return blogId;
+	}
+
+	public void setBlogId(Long blogId) {
+		this.blogId = blogId;
 	}
 
 }

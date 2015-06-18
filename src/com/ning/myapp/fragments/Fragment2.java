@@ -22,6 +22,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+
+import com.ning.myapp.listwidget.ZrcListView.OnItemClickListener;
+
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
@@ -34,9 +38,11 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.google.gson.Gson;
 import com.ning.myapp.R;
+import com.ning.myapp.activitys.BlogEditActivity;
 import com.ning.myapp.activitys.LoginActivity;
 import com.ning.myapp.activitys.MainTabActivity;
 import com.ning.myapp.entitys.Blog;
+import com.ning.myapp.entitys.BlogCategory;
 import com.ning.myapp.listwidget.SimpleFooter;
 import com.ning.myapp.listwidget.SimpleHeader;
 import com.ning.myapp.listwidget.ZrcListView;
@@ -46,7 +52,7 @@ import com.ning.myapp.utils.Constants;
 import com.ning.myapp.utils.ToastUtil;
 import com.ning.myapp.utils.Utils;
 
-public class Fragment2 extends Fragment {
+public class Fragment2 extends Fragment  {
 	private static final String TAG = "Fragment2";
 
 	private ZrcListView listView;
@@ -61,6 +67,8 @@ public class Fragment2 extends Fragment {
 	private ArrayList<Blog> blogArray;
 	private ArrayList<ArrayList<Blog>> allblogArray=new ArrayList<ArrayList<Blog>>();
 	private static final int pageSize = 10 ;
+	private static final int contentSize = 50 ;
+	private String mAction = null;
 	
 	private static String url = Constants.Url.Bloginfo.ALLBLOG;
 
@@ -147,7 +155,7 @@ public class Fragment2 extends Fragment {
 
 		adapter = new MyAdapter();
 		listView.setAdapter(adapter);
-		
+		listView.setOnItemClickListener((com.ning.myapp.listwidget.ZrcListView.OnItemClickListener) itemclick);
 		listView.refresh(); // 主动下拉刷新
 
 		return view;
@@ -223,11 +231,16 @@ public class Fragment2 extends Fragment {
 			textTitle=(TextView)view.findViewById(R.id.edlist_text_title);
 			textContent=(TextView)view.findViewById(R.id.edlist_text_content);
 			textTitle.setText(msgs.get(position).getBlogTitle());
-			String content = msgs.get(position).getCreatedTime()+"    "+msgs.get(position).getContent();
+			String content="";
+			if(msgs.get(position).getContent().length()>= contentSize){
+				 content = msgs.get(position).getCreatedTime()+"    "+msgs.get(position).getContent().substring(0, 50)+"...";
+			}else{
+				 content = msgs.get(position).getCreatedTime()+"    "+msgs.get(position).getContent();
+			}
 			textContent.setText(content);
 			Spannable span = new SpannableString(textContent.getText());  
 //			span.setSpan(new AbsoluteSizeSpan(58), 11, 16, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);  
-			span.setSpan(new ForegroundColorSpan(Color.BLUE), 0, 10, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);  
+			span.setSpan(new ForegroundColorSpan(Color.BLUE), 0, 18, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);  
 //			span.setSpan(new BackgroundColorSpan(Color.YELLOW), 11, 16, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);  
 			textContent.setText(span);
 			return view;
@@ -292,13 +305,10 @@ public class Fragment2 extends Fragment {
 								blogArray = new ArrayList<Blog>();
 							}
 							try {
-								JSONObject object = (JSONObject) response
-										.getJSONObject(i);
+								JSONObject object = (JSONObject) response.getJSONObject(i);
 								System.out.println(object);
-								blog = gson.fromJson(object.toString(),
-										Blog.class);
+								blog = gson.fromJson(object.toString(),Blog.class);
 								blogArray.add(blog);
-
 							} catch (JSONException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
@@ -309,7 +319,6 @@ public class Fragment2 extends Fragment {
 						}else if(i % pageSize != 0){
 							allblogArray.add(blogArray);
 						}
-						
 
 					}
 				}, new Response.ErrorListener() {
@@ -322,5 +331,21 @@ public class Fragment2 extends Fragment {
 		// Adding request to request queue
 		AppController.getInstance().addToRequestQueue(strReq, tag_json_array);
 	}
+
+	private OnItemClickListener itemclick = new OnItemClickListener() {
+		
+		@Override
+		public void onItemClick(ZrcListView parent, View view, int position,long id) {
+			Blog blog = (Blog) adapter.getItem(position);
+			Intent mIntent = new Intent();
+			mIntent.setAction(Constants.Action.BLOGVIEW);
+			mIntent.setClass(getActivity(),BlogEditActivity.class);
+			mIntent.putExtra("blogTitle", blog.getBlogTitle());
+			mIntent.putExtra("blogContent", blog.getContent());
+			mIntent.putExtra("blogTime", blog.getCreatedTime());
+			startActivity(mIntent);
+		}
+
+	};
 
 }
