@@ -52,7 +52,7 @@ import com.ning.myapp.utils.Constants;
 import com.ning.myapp.utils.ToastUtil;
 import com.ning.myapp.utils.Utils;
 
-public class Fragment2 extends Fragment  {
+public class BlogListFragment extends Fragment  {
 	private static final String TAG = "Fragment2";
 
 	private ZrcListView listView;
@@ -288,8 +288,7 @@ public class Fragment2 extends Fragment  {
 	}
 
 	private void getRcBlogs(String url) {
-		JsonArrayRequest strReq = new JsonArrayRequest(Method.GET, url,
-				new Response.Listener<JSONArray>() {
+		JsonArrayRequest strReq = new JsonArrayRequest(Method.GET, url,new Response.Listener<JSONArray>() {
 					@Override
 					public void onResponse(JSONArray response) {
 						Log.d(TAG, response.toString());

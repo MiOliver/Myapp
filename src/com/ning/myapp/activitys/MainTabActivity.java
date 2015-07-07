@@ -24,7 +24,7 @@ import android.widget.TabWidget;
 
 import com.ning.myapp.R;
 import com.ning.myapp.fragments.Fragment1;
-import com.ning.myapp.fragments.Fragment2;
+import com.ning.myapp.fragments.BlogListFragment;
 import com.ning.myapp.fragments.Fragment3;
 import com.ning.myapp.fragments.Fragment4;
 import com.ning.myapp.utils.Constants;
@@ -41,7 +41,7 @@ public class MainTabActivity extends FragmentActivity
 	TabsAdapter mTabsAdapter;
 	private int onbackPresscount=0;
 	
-	private final Class[] fragments = { Fragment1.class, Fragment2.class,
+	private final Class[] fragments = { Fragment1.class, BlogListFragment.class,
 			Fragment3.class, Fragment4.class };
 
 	@Override

@@ -44,5 +44,12 @@ public class Constants {
 		public static final String BLOGVIEW = "blogedit.blogview";
 		public static final String BLOGEDIT = "blogedit.blogedit";
 	}
+	
+	public static final class ResponseCode{
+		public static final class BaseCode{
+			public static final String 	SUCCESS = "200";
+			public static final String  FAILURE = "201";
+		}
+	}
 
 }

@@ -1,5 +1,8 @@
 package com.ning.myapp.activitys;
 
+import java.io.StringReader;
+
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
@@ -19,8 +22,10 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.google.gson.Gson;
+import com.google.gson.stream.JsonReader;
 import com.ning.myapp.R;
 import com.ning.myapp.entitys.User;
+import com.ning.myapp.net.BaseResponse;
 import com.ning.myapp.utils.AppController;
 import com.ning.myapp.utils.Constants;
 import com.ning.myapp.utils.ToastUtil;
@@ -40,6 +45,8 @@ public class LoginActivity extends Activity implements OnClickListener {
 
 	private String tag_json_obj = "json_obj_req";
 	private String tag_string_req= "tag_string_req";
+	
+	private BaseResponse baseRequest= null;
 
 	
 	@Override
@@ -92,8 +99,8 @@ public class LoginActivity extends Activity implements OnClickListener {
 	}
 
 	private void getUserinfo(String url) {
-		JsonObjectRequest jsonObjReq = new JsonObjectRequest(Method.GET, url,
-				"", new Response.Listener<JSONObject>() {
+		
+		JsonObjectRequest jsonObjReq = new JsonObjectRequest(Method.GET, url,"", new Response.Listener<JSONObject>() {
 					@Override
 					public void onResponse(JSONObject response) {
 						Log.d(TAG, response.toString());
@@ -108,45 +115,60 @@ public class LoginActivity extends Activity implements OnClickListener {
 
 				});
 
-		// Adding request to request queue
 		AppController.getInstance().addToRequestQueue(jsonObjReq, tag_json_obj);
 	}
 	
-	private void login(String url) {
-		StringRequest strReq = new StringRequest(Method.GET,
-	            url, new Response.Listener<String>() {
-
-	                @Override
-	                public void onResponse(String response) {
-	                    Log.d(TAG, response.toString());
-	                    if(!response.toString().equals("login failure")){
-	                    	User user = null;
-	                    	user = gson.fromJson(response, User.class);
-	                    	System.out.println(user);
-	                    	Utils.Preference.setBooleanPref(getApplicationContext(), Constants.Preference.LOGINSTATUS, true);
-	                    	Utils.Preference.setStringPref(getApplicationContext(), Constants.Preference.USERID, user.getId());
-	                    	Utils.Preference.setStringPref(getApplicationContext(), Constants.Preference.USERNAME, user.getUsername());
-	                    	Intent intent = new Intent();
-	                		intent.setClass(LoginActivity.this,MainTabActivity.class);
-	                		startActivity(intent);
-	                		LoginActivity.this.finish();
-	                    }else{
-	                    	ToastUtil.show(LoginActivity.this, R.string.loginfail);
-	                    }
-
-	                }
-	            }, new Response.ErrorListener() {
-
-	                @Override
-	                public void onErrorResponse(VolleyError error) {
-	                    VolleyLog.d(TAG, "Error: " + error.getMessage());
-	                }
-	            });
-		
-		// Adding request to request queue
-		AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
-	}
 	
+	private void login(String url) {
+		
+		JsonObjectRequest jsonObjReq = new JsonObjectRequest(Method.GET, url,"", new Response.Listener<JSONObject>() {
+					@Override
+					public void onResponse(JSONObject response) {
+						Log.d(TAG, response.toString());
+//						baseRequest=gson.fromJson(response.toString(), BaseResponse.class);
+						String code;
+						String desc;
+						try {
+							code = response.getJSONObject("header").optString("code");
+							desc =response.getJSONObject("header").optString("desc");
+							if(code.equals(Constants.ResponseCode.BaseCode.SUCCESS)){
+								User user = null;
+								JSONObject body= response.getJSONObject("body");
+//								JsonReader reader = new JsonReader(new StringReader(body));
+//								reader.setLenient(true);
+		                    	user = gson.fromJson(body.toString(), User.class);
+		                    	System.out.println(user);
+		                    	Utils.Preference.setBooleanPref(getApplicationContext(), Constants.Preference.LOGINSTATUS, true);
+		                    	Utils.Preference.setStringPref(getApplicationContext(), Constants.Preference.USERID, user.getId());
+		                    	Utils.Preference.setStringPref(getApplicationContext(), Constants.Preference.USERID, "user_1433852026322401409");
+		                    	Utils.Preference.setStringPref(getApplicationContext(), Constants.Preference.USERNAME, user.getUsername());
+		                    	Intent intent = new Intent();
+		                		intent.setClass(LoginActivity.this,MainTabActivity.class);
+		                		startActivity(intent);
+		                		LoginActivity.this.finish();
+							}else{
+								ToastUtil.show(LoginActivity.this, R.string.loginfail);
+							}
+						} catch (JSONException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						
+						
+					}
+				}, new Response.ErrorListener() {
+
+					@Override
+					public void onErrorResponse(VolleyError error) {
+						VolleyLog.d(TAG, "Error: " + error.getMessage());
+						Log.i(TAG, error.getMessage());
+
+					}
+
+				});
+
+		AppController.getInstance().addToRequestQueue(jsonObjReq, tag_json_obj);
+	}
 	
 
 }

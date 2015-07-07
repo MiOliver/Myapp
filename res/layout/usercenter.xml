@@ -43,6 +43,7 @@
             android:padding="5dip"
             android:singleLine="true"
             android:textColorHint="#AAAAAA"
+            android:inputType="textPassword"
             android:textSize="15sp" />
 
         <Button
