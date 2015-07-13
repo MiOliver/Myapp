@@ -185,7 +185,7 @@ public class NotesActivity extends Activity implements OnItemClickListener,
 			textTime.setText(content);
 			Spannable span = new SpannableString(textTime.getText());
 			// span.setSpan(new AbsoluteSizeSpan(58), 11, 16, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-			span.setSpan(new ForegroundColorSpan(Color.BLUE), 0, 18,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+			span.setSpan(new ForegroundColorSpan(Color.BLUE), 0, 19,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 			// span.setSpan(new BackgroundColorSpan(Color.YELLOW), 11, 16, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 			textTime.setText(span);
 			return view;

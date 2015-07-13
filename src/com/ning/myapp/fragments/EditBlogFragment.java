@@ -88,6 +88,9 @@ public class EditBlogFragment extends Fragment implements OnClickListener{
 		switch (id) {
 		case R.id.blog_save:
 			System.out.println("blog save !");
+			if(blogId==0L){
+				blogId=Utils.Preference.getLongPref(getActivity().getApplicationContext(),Constants.Preference.DEFAULT_CATE_ID, 0L);
+			}
 			saveBlog();
 			break;
 		case R.id.action_clear:

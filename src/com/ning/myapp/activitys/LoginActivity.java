@@ -140,6 +140,7 @@ public class LoginActivity extends Activity implements OnClickListener {
 		                    	System.out.println(user);
 		                    	Utils.Preference.setBooleanPref(getApplicationContext(), Constants.Preference.LOGINSTATUS, true);
 		                    	Utils.Preference.setStringPref(getApplicationContext(), Constants.Preference.USERID, user.getId());
+		                    	Utils.Preference.setLongPref(getApplicationContext(), Constants.Preference.DEFAULT_CATE_ID, user.getDefaultCateId());
 		                    	Utils.Preference.setStringPref(getApplicationContext(), Constants.Preference.USERID, "user_1433852026322401409");
 		                    	Utils.Preference.setStringPref(getApplicationContext(), Constants.Preference.USERNAME, user.getUsername());
 		                    	Intent intent = new Intent();

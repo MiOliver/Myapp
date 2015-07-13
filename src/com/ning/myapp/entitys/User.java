@@ -1,6 +1,7 @@
 package com.ning.myapp.entitys;
 
 public class User {
+	
 	private String Id;
 	private String Username;
 	private String Password;
@@ -8,6 +9,7 @@ public class User {
 	private int Age;
 	private String Address;
 	private String Email;
+	private Long DefaultCateId;
 	private String CreatedTime;
 	private int Weight;
 	public String getId() {
@@ -63,6 +65,13 @@ public class User {
 	}
 	public void setWeight(int weight) {
 		Weight = weight;
+	}
+	
+	public Long getDefaultCateId() {
+		return DefaultCateId;
+	}
+	public void setDefaultCateId(Long defaultCateId) {
+		DefaultCateId = defaultCateId;
 	}
 	
 	
