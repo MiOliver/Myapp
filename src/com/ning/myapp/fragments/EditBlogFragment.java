@@ -46,12 +46,18 @@ public class EditBlogFragment extends Fragment implements OnClickListener{
 	private String tag_json_obj = "json_obj_req";
 	private String tag_string_req = "tag_string_req";
 	private Fragment blogfragment;
+	private String title=null;
+	private String content=null;
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onActivityCreated(savedInstanceState);
-		
+		handleIntent();
+		if(title!=null && content!=null ){
+			textTitle.setText(title);
+			textContent.setText(content);
+		}
 	}
 
 	@Override
@@ -68,6 +74,19 @@ public class EditBlogFragment extends Fragment implements OnClickListener{
 		super.onCreateOptionsMenu(menu, inflater);
 		inflater.inflate(R.menu.blogeditfragmenu, menu);
 	}
+	
+	public void handleIntent(){
+		intent=getActivity().getIntent();
+		if(intent!=null){
+			Bundle bundle =intent.getExtras(); 
+			if(bundle!=null){
+				title=bundle.getString("blogTitle", "title");
+				content=bundle.getString("blogContent", "content");
+			}
+			
+		}
+		
+	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -78,6 +97,7 @@ public class EditBlogFragment extends Fragment implements OnClickListener{
 		textContent = (TextView) view.findViewById(R.id.ed_blog_content);
 		catebutton = (ImageButton) view.findViewById(R.id.imb_cate);
 		catebutton.setOnClickListener(this);
+		
 		return view;
 	}
 	

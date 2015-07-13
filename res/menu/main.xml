@@ -9,8 +9,9 @@
         android:title="@string/action_settings"/>
     <item
         android:id="@+id/action_create"
+        android:icon="@drawable/add"
         android:orderInCategory="100"
-        android:showAsAction="never"
+        android:showAsAction="always"
         android:title="@string/createblog"/>
     
     <!-- 

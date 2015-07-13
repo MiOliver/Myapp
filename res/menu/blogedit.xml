@@ -2,16 +2,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.ning.myapp.BlogEditActivity" >
 
-    <item
+   <!--   
+   <item
         android:id="@+id/action_save"
         android:icon="@drawable/yes"
         android:orderInCategory="100"
         android:showAsAction="always"
         android:title="@string/save"/>
+         -->
     <item
         android:id="@+id/action_clear"
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="@string/createblog"/>
+       
 
 </menu>

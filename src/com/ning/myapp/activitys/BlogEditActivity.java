@@ -124,8 +124,8 @@ public class BlogEditActivity extends Activity implements OnClickListener {
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
 		switch (id) {
-		case R.id.action_save:
-			break;
+//		case R.id.action_save:
+//			break;
 		case R.id.action_clear:
 			break;
 		default:
