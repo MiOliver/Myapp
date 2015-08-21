@@ -28,6 +28,7 @@ import com.ning.myapp.fragments.BlogListFragment;
 import com.ning.myapp.fragments.Fragment3;
 import com.ning.myapp.fragments.Fragment4;
 import com.ning.myapp.fragments.GridFragment;
+import com.ning.myapp.fragments.WidgetTestFragment;
 import com.ning.myapp.utils.Constants;
 import com.ning.myapp.utils.ToastUtil;
 import com.ning.myapp.utils.Utils;
@@ -43,7 +44,7 @@ public class MainTabActivity extends FragmentActivity
 	private int onbackPresscount=0;
 	
 	private final Class[] fragments = { Fragment1.class, BlogListFragment.class,
-			Fragment3.class, GridFragment.class };
+			Fragment3.class, WidgetTestFragment.class };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
